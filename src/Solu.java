@@ -6,7 +6,7 @@ class Solu{
 
     // Function to find and print longest
 // substring without repeating characters.
-    public static String findLongestSubstring(String str)
+    public static int findLongestSubstring(String str)
     {
         int i;
         int n = str.length();
@@ -33,8 +33,7 @@ class Solu{
 
         // already visited character.
         HashMap<Character,
-                Integer> pos = new HashMap<Character,
-                Integer>();
+                Integer> pos = new HashMap<>();
 
         // Last occurrence of first
         // character is index 0;
@@ -97,15 +96,14 @@ class Solu{
         // repeating characters
         // is from str[start]
         // to str[start+maxlen-1].
-        return str.substring(start,
-                start +
-                        maxlen);
+        String longestSub = str.substring(start, start + maxlen);
+    return longestSub.length();
     }
 
     // Driver Code
     public static void main(String[] args)
     {
-        String str = "PeterTurksonAsamoah";
+        String str = "abcabcbb";
         System.out.print(findLongestSubstring(str));
     }
 }
